@@ -1,7 +1,11 @@
 [gd_scene format=3 uid="uid://dald737tdcycn"]
 
 [ext_resource type="PackedScene" uid="uid://c47kbjwb152b7" path="res://Scenes/testtrack.tscn" id="1_jjgbg"]
+[ext_resource type="PackedScene" uid="uid://c8wk0v3hw5dtm" path="res://Car/bus.tscn" id="2_bo1nx"]
 
 [node name="Main" type="Node3D" unique_id=2045872867]
 
 [node name="Testtrack" parent="." unique_id=608214609 instance=ExtResource("1_jjgbg")]
+
+[node name="VehicleBody3D" parent="." unique_id=1925260360 instance=ExtResource("2_bo1nx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.567566, 0)

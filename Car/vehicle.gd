@@ -4,8 +4,8 @@ const STEER_SPEED: float = 1.0
 const STEER_LIMIT: float = 0.4
 const BRAKE_STRENGTH: float = 0.5
 
-var driven_wheels = [$RR,$LR]
-var steering_wheels = [$FR,$FL]
+@onready var driven_wheels = [$RR,$LR]
+@onready var steering_wheels = [$FR,$FL]
 
 var steer_target: float = 0.0
 var engine_power: float = 40.0
