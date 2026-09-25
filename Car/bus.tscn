@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://ciuu25qse3jsl" path="res://Car/vehicle.gd" id="1_0eymi"]
 [ext_resource type="ArrayMesh" uid="uid://c15hnne2a7hts" path="res://Car/bus.obj" id="1_o8jr2"]
+[ext_resource type="Material" uid="uid://c7u3auxl44q2c" path="res://Assets/wheel.tres" id="3_opibm"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_o8jr2"]
 size = Vector3(2.5, 1.2084961, 1.2502441)
@@ -47,6 +48,7 @@ metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="FR" unique_id=1894411582]
 transform = Transform3D(-4.371139e-08, -0.3, 0, 1, -1.3113417e-08, 0, 0, 0, 1, 0, 0, 0)
+material_override = ExtResource("3_opibm")
 mesh = SubResource("CylinderMesh_0ubtf")
 
 [node name="FL" type="VehicleWheel3D" parent="." unique_id=86121759]
@@ -55,6 +57,7 @@ metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="FL" unique_id=535377638]
 transform = Transform3D(-4.371139e-08, -0.3, 0, 1, -1.3113417e-08, 0, 0, 0, 1, 0, 0, 0)
+material_override = ExtResource("3_opibm")
 mesh = SubResource("CylinderMesh_0ubtf")
 
 [node name="RR" type="VehicleWheel3D" parent="." unique_id=957805072]
@@ -63,6 +66,7 @@ metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="RR" unique_id=2145175985]
 transform = Transform3D(-4.371139e-08, -0.3, 0, 1, -1.3113417e-08, 0, 0, 0, 1, 0, 0, 0)
+material_override = ExtResource("3_opibm")
 mesh = SubResource("CylinderMesh_0ubtf")
 
 [node name="LR" type="VehicleWheel3D" parent="." unique_id=680937839]
@@ -71,4 +75,5 @@ metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="LR" unique_id=2113247357]
 transform = Transform3D(-4.371139e-08, -0.3, 0, 1, -1.3113417e-08, 0, 0, 0, 1, 0, 0, 0)
+material_override = ExtResource("3_opibm")
 mesh = SubResource("CylinderMesh_0ubtf")
