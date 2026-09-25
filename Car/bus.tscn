@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://c8wk0v3hw5dtm"]
 
+[ext_resource type="Script" uid="uid://ciuu25qse3jsl" path="res://Car/vehicle.gd" id="1_0eymi"]
 [ext_resource type="ArrayMesh" uid="uid://c15hnne2a7hts" path="res://Car/bus.obj" id="1_o8jr2"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_o8jr2"]
@@ -18,6 +19,7 @@ size = Vector3(2.5, 3.2973633, 9)
 
 [node name="VehicleBody3D" type="VehicleBody3D" unique_id=1925260360]
 mass = 8000.0
+script = ExtResource("1_0eymi")
 metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1903615865]
