@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://c47kbjwb152b7"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_t6bar"]
+
+[sub_resource type="HeightMapShape3D" id="HeightMapShape3D_t6bar"]
+
+[node name="Testtrack" type="StaticBody3D" unique_id=608214609]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=456319215]
+transform = Transform3D(40, 0, 0, 0, 40, 0, 0, 0, 40, 0, 0, 0)
+mesh = SubResource("PlaneMesh_t6bar")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="." unique_id=268274753]
+transform = Transform3D(80, 0, 0, 0, 80, 0, 0, 0, 80, 0, 0, 0)
+shape = SubResource("HeightMapShape3D_t6bar")
