@@ -1,0 +1,66 @@
+[gd_scene format=3 uid="uid://c8wk0v3hw5dtm"]
+
+[ext_resource type="ArrayMesh" uid="uid://c15hnne2a7hts" path="res://Car/bus.obj" id="1_o8jr2"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_o8jr2"]
+size = Vector3(2.5, 1.2084961, 1.2502441)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0eymi"]
+size = Vector3(2.5, 1.2172852, 0.7498779)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_opibm"]
+size = Vector3(2.5, 1.1870117, 4.598755)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_rjd7k"]
+size = Vector3(2.5, 3.2973633, 9)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_0ubtf"]
+
+[node name="VehicleBody3D" type="VehicleBody3D" unique_id=1925260360]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1903615865]
+mesh = ExtResource("1_o8jr2")
+
+[node name="CollisionBottomRear" type="CollisionShape3D" parent="." unique_id=1228512431]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.645752, -3.874878)
+shape = SubResource("BoxShape3D_o8jr2")
+
+[node name="CollisionBottomFront" type="CollisionShape3D" parent="." unique_id=1679738850]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.6413574, 4.125061)
+shape = SubResource("BoxShape3D_0eymi")
+
+[node name="CollisionBottomCenter" type="CollisionShape3D" parent="." unique_id=1160674764]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.6564941, 0.26031494)
+shape = SubResource("BoxShape3D_opibm")
+
+[node name="CollisionMain" type="CollisionShape3D" parent="." unique_id=151502334]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.60131836, 0)
+shape = SubResource("BoxShape3D_rjd7k")
+
+[node name="FR" type="VehicleWheel3D" parent="." unique_id=173740640]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1768306, -1.9410045, 3.1490667)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="FR" unique_id=1894411582]
+transform = Transform3D(-4.371139e-08, -0.3, 0, 1, -1.3113417e-08, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("CylinderMesh_0ubtf")
+
+[node name="FL" type="VehicleWheel3D" parent="." unique_id=86121759]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.17, -1.94, 3.149)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="FL" unique_id=535377638]
+transform = Transform3D(-4.371139e-08, -0.3, 0, 1, -1.3113417e-08, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("CylinderMesh_0ubtf")
+
+[node name="RR" type="VehicleWheel3D" parent="." unique_id=957805072]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.17, -1.94, -2.6427612)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="RR" unique_id=2145175985]
+transform = Transform3D(-4.371139e-08, -0.3, 0, 1, -1.3113417e-08, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("CylinderMesh_0ubtf")
+
+[node name="LR" type="VehicleWheel3D" parent="." unique_id=680937839]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.17, -1.94, -2.64)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="LR" unique_id=2113247357]
+transform = Transform3D(-4.371139e-08, -0.3, 0, 1, -1.3113417e-08, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("CylinderMesh_0ubtf")
