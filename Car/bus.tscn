@@ -17,6 +17,8 @@ size = Vector3(2.5, 3.2973633, 9)
 [sub_resource type="CylinderMesh" id="CylinderMesh_0ubtf"]
 
 [node name="VehicleBody3D" type="VehicleBody3D" unique_id=1925260360]
+mass = 8000.0
+metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1903615865]
 mesh = ExtResource("1_o8jr2")
@@ -39,6 +41,7 @@ shape = SubResource("BoxShape3D_rjd7k")
 
 [node name="FR" type="VehicleWheel3D" parent="." unique_id=173740640]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1768306, -1.9410045, 3.1490667)
+metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="FR" unique_id=1894411582]
 transform = Transform3D(-4.371139e-08, -0.3, 0, 1, -1.3113417e-08, 0, 0, 0, 1, 0, 0, 0)
@@ -46,6 +49,7 @@ mesh = SubResource("CylinderMesh_0ubtf")
 
 [node name="FL" type="VehicleWheel3D" parent="." unique_id=86121759]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.17, -1.94, 3.149)
+metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="FL" unique_id=535377638]
 transform = Transform3D(-4.371139e-08, -0.3, 0, 1, -1.3113417e-08, 0, 0, 0, 1, 0, 0, 0)
@@ -53,6 +57,7 @@ mesh = SubResource("CylinderMesh_0ubtf")
 
 [node name="RR" type="VehicleWheel3D" parent="." unique_id=957805072]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.17, -1.94, -2.6427612)
+metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="RR" unique_id=2145175985]
 transform = Transform3D(-4.371139e-08, -0.3, 0, 1, -1.3113417e-08, 0, 0, 0, 1, 0, 0, 0)
@@ -60,6 +65,7 @@ mesh = SubResource("CylinderMesh_0ubtf")
 
 [node name="LR" type="VehicleWheel3D" parent="." unique_id=680937839]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.17, -1.94, -2.64)
+metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="LR" unique_id=2113247357]
 transform = Transform3D(-4.371139e-08, -0.3, 0, 1, -1.3113417e-08, 0, 0, 0, 1, 0, 0, 0)
