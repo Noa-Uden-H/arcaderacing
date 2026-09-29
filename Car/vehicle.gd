@@ -17,6 +17,8 @@ func _ready() -> void:
 	for wheel in steering_wheels:
 		wheel.use_as_steering = true
 		wheel.use_as_traction = true
+	$Camera.position = $cockpit.position
+	$Camera.rotation = $cockpit.rotation
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://ciuu25qse3jsl" path="res://Car/vehicle.gd" id="1_0eymi"]
 [ext_resource type="ArrayMesh" uid="uid://c15hnne2a7hts" path="res://Car/bus.obj" id="1_o8jr2"]
-[ext_resource type="Material" uid="uid://c7u3auxl44q2c" path="res://Assets/wheel.tres" id="3_opibm"]
 [ext_resource type="ArrayMesh" uid="uid://dekonxhfla5d4" path="res://Car/wheel.obj" id="4_rjd7k"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_o8jr2"]
@@ -16,6 +15,9 @@ size = Vector3(2.5, 1.1870117, 4.598755)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_rjd7k"]
 size = Vector3(2.5, 3.2973633, 9)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_opibm"]
+albedo_color = Color(0, 0, 0, 1)
 
 [node name="VehicleBody3D" type="VehicleBody3D" unique_id=1925260360]
 mass = 8000.0
@@ -41,8 +43,11 @@ shape = SubResource("BoxShape3D_opibm")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.60131836, 0)
 shape = SubResource("BoxShape3D_rjd7k")
 
+[node name="Camera" type="Camera3D" parent="." unique_id=649446750]
+
 [node name="FR" type="VehicleWheel3D" parent="." unique_id=173740640]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1768306, -1.9410045, 3.1490667)
+engine_force = 10000.0
 wheel_rest_length = 0.3
 suspension_stiffness = 20000.0
 suspension_max_force = 40000.0
@@ -52,11 +57,12 @@ metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="FR" unique_id=1894411582]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
-material_override = ExtResource("3_opibm")
+material_override = SubResource("StandardMaterial3D_opibm")
 mesh = ExtResource("4_rjd7k")
 
 [node name="FL" type="VehicleWheel3D" parent="." unique_id=86121759]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.17, -1.94, 3.149)
+engine_force = 10000.0
 wheel_rest_length = 0.3
 suspension_stiffness = 20000.0
 suspension_max_force = 40000.0
@@ -66,11 +72,12 @@ metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="FL" unique_id=535377638]
 transform = Transform3D(-0.5, 0, -4.371139e-08, 0, 0.5, 0, 4.371139e-08, 0, -0.5, 0, 0, 0)
-material_override = ExtResource("3_opibm")
+material_override = SubResource("StandardMaterial3D_opibm")
 mesh = ExtResource("4_rjd7k")
 
 [node name="RR" type="VehicleWheel3D" parent="." unique_id=957805072]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.17, -1.94, -2.6427612)
+engine_force = 10000.0
 wheel_rest_length = 0.3
 suspension_stiffness = 20000.0
 suspension_max_force = 40000.0
@@ -80,11 +87,12 @@ metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="RR" unique_id=2145175985]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
-material_override = ExtResource("3_opibm")
+material_override = SubResource("StandardMaterial3D_opibm")
 mesh = ExtResource("4_rjd7k")
 
 [node name="LR" type="VehicleWheel3D" parent="." unique_id=680937839]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.17, -1.94, -2.64)
+engine_force = 10000.0
 wheel_rest_length = 0.3
 suspension_stiffness = 20000.0
 suspension_max_force = 40000.0
@@ -94,5 +102,14 @@ metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="LR" unique_id=2113247357]
 transform = Transform3D(-0.5, 0, -4.371139e-08, 0, 0.5, 0, 4.371139e-08, 0, -0.5, 0, 0, 0)
-material_override = ExtResource("3_opibm")
+material_override = SubResource("StandardMaterial3D_opibm")
 mesh = ExtResource("4_rjd7k")
+
+[node name="cockpit" type="Marker3D" parent="." unique_id=116226946]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0.62802124, 0, 2.7880206)
+
+[node name="closechase" type="Marker3D" parent="." unique_id=1824199671]
+transform = Transform3D(-1, -1.5180806e-08, 8.609462e-08, 0, 0.9848077, 0.17364818, -8.742278e-08, 0.17364818, -0.9848077, 0, 4, -8)
+
+[node name="farchase" type="Marker3D" parent="." unique_id=2053075913]
+transform = Transform3D(-1, 3.694646e-08, -7.923193e-08, 0, 0.9063077, 0.42261824, 8.742278e-08, 0.42261824, -0.9063077, 0, 10, -20)
