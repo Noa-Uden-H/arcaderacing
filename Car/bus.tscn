@@ -18,7 +18,7 @@ size = Vector3(2.5, 1.1870117, 4.598755)
 size = Vector3(2.5, 3.2973633, 9)
 
 [node name="VehicleBody3D" type="VehicleBody3D" unique_id=1925260360]
-mass = 50.0
+mass = 8000.0
 script = ExtResource("1_0eymi")
 metadata/_edit_group_ = true
 
@@ -43,9 +43,11 @@ shape = SubResource("BoxShape3D_rjd7k")
 
 [node name="FR" type="VehicleWheel3D" parent="." unique_id=173740640]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1768306, -1.9410045, 3.1490667)
-wheel_rest_length = 0.5
-suspension_travel = 0.5
-suspension_stiffness = 500.0
+wheel_rest_length = 0.3
+suspension_stiffness = 20000.0
+suspension_max_force = 40000.0
+damping_compression = 400.0
+damping_relaxation = 550.0
 metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="FR" unique_id=1894411582]
@@ -55,9 +57,11 @@ mesh = ExtResource("4_rjd7k")
 
 [node name="FL" type="VehicleWheel3D" parent="." unique_id=86121759]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.17, -1.94, 3.149)
-wheel_rest_length = 0.5
-suspension_travel = 0.5
-suspension_stiffness = 500.0
+wheel_rest_length = 0.3
+suspension_stiffness = 20000.0
+suspension_max_force = 40000.0
+damping_compression = 400.0
+damping_relaxation = 550.0
 metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="FL" unique_id=535377638]
@@ -67,9 +71,11 @@ mesh = ExtResource("4_rjd7k")
 
 [node name="RR" type="VehicleWheel3D" parent="." unique_id=957805072]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.17, -1.94, -2.6427612)
-wheel_rest_length = 0.5
-suspension_travel = 0.5
-suspension_stiffness = 500.0
+wheel_rest_length = 0.3
+suspension_stiffness = 20000.0
+suspension_max_force = 40000.0
+damping_compression = 400.0
+damping_relaxation = 550.0
 metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="RR" unique_id=2145175985]
@@ -79,9 +85,11 @@ mesh = ExtResource("4_rjd7k")
 
 [node name="LR" type="VehicleWheel3D" parent="." unique_id=680937839]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.17, -1.94, -2.64)
-wheel_rest_length = 0.5
-suspension_travel = 0.5
-suspension_stiffness = 500.0
+wheel_rest_length = 0.3
+suspension_stiffness = 20000.0
+suspension_max_force = 40000.0
+damping_compression = 400.0
+damping_relaxation = 550.0
 metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="LR" unique_id=2113247357]
