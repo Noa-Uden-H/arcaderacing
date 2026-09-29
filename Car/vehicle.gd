@@ -1,7 +1,7 @@
 extends VehicleBody3D
 
 const STEER_SPEED: float = 1.0
-const STEER_LIMIT: float = 0.4
+const STEER_LIMIT: float = 0.2
 const BRAKE_STRENGTH: float = 300
 
 @onready var driven_wheels = [$RR,$LR]
@@ -26,6 +26,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
+	#Forward and backward acceleration
 	if Input.is_action_pressed("accelerate"):
 		engine_force = ENGINE_POWER
 	elif Input.is_action_pressed("reverse") and not is_moving_forwards():
@@ -33,14 +34,30 @@ func _physics_process(delta: float) -> void:
 	else:
 		engine_force = 0
 		
+	#Braking
 	if Input.is_action_pressed("brake"):
 		brake = BRAKE_STRENGTH
 	else:
 		brake = 0
 	
+	#Steering
+	if Input.is_action_pressed("left"):
+		steer_target = 1
+	elif Input.is_action_pressed("right"):
+		steer_target = -1
+	else:
+		steer_target = 0
+	
+	steering = move_toward(steering, steer_target*STEER_LIMIT, STEER_SPEED * delta)
+	
+	#Camera
 	if Input.is_action_just_pressed("camera"):
 		current_cam = (current_cam + 1) % len(cams)
 	change_cam(delta)
+	
+	#Debug if below platform
+	if global_position.y < -1:
+		print("off")
 	
 	
 func change_cam(delta) -> void:
