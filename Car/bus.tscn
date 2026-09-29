@@ -47,7 +47,6 @@ shape = SubResource("BoxShape3D_rjd7k")
 
 [node name="FR" type="VehicleWheel3D" parent="." unique_id=173740640]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1768306, -1.9410045, 3.1490667)
-engine_force = 10000.0
 wheel_rest_length = 0.3
 suspension_stiffness = 20000.0
 suspension_max_force = 40000.0
@@ -62,7 +61,6 @@ mesh = ExtResource("4_rjd7k")
 
 [node name="FL" type="VehicleWheel3D" parent="." unique_id=86121759]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.17, -1.94, 3.149)
-engine_force = 10000.0
 wheel_rest_length = 0.3
 suspension_stiffness = 20000.0
 suspension_max_force = 40000.0
@@ -77,7 +75,6 @@ mesh = ExtResource("4_rjd7k")
 
 [node name="RR" type="VehicleWheel3D" parent="." unique_id=957805072]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.17, -1.94, -2.6427612)
-engine_force = 10000.0
 wheel_rest_length = 0.3
 suspension_stiffness = 20000.0
 suspension_max_force = 40000.0
@@ -92,7 +89,6 @@ mesh = ExtResource("4_rjd7k")
 
 [node name="LR" type="VehicleWheel3D" parent="." unique_id=680937839]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.17, -1.94, -2.64)
-engine_force = 10000.0
 wheel_rest_length = 0.3
 suspension_stiffness = 20000.0
 suspension_max_force = 40000.0
