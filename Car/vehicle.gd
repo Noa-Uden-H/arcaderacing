@@ -16,6 +16,7 @@ func _ready() -> void:
 		wheel.use_as_traction = true
 	for wheel in steering_wheels:
 		wheel.use_as_steering = true
+		wheel.use_as_traction = true
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
