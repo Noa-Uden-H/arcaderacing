@@ -1,18 +1,37 @@
 [gd_scene format=3 uid="uid://dsxfvc2ifd1ty"]
 
 [ext_resource type="Script" uid="uid://ctvt23a38ve81" path="res://Scripts/ui.gd" id="1_jxero"]
+[ext_resource type="Texture2D" uid="uid://c553qmwe54geo" path="res://Car/bus_speedometer.png" id="2_nf4gj"]
+[ext_resource type="Texture2D" uid="uid://mswrixb5gcio" path="res://Car/bus_speedometer_arrow.png" id="3_2246s"]
 
-[node name="UI" type="MarginContainer" unique_id=198344620]
+[node name="UI" type="Control" unique_id=327669661]
+layout_mode = 3
 anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -1.0
-offset_top = -23.0
+offset_left = -283.0
+offset_top = -283.0
 grow_horizontal = 0
 grow_vertical = 0
 script = ExtResource("1_jxero")
 
+[node name="speedometer" type="TextureRect" parent="." unique_id=1016372297]
+layout_mode = 0
+offset_right = 283.0
+offset_bottom = 283.0
+texture = ExtResource("2_nf4gj")
+
+[node name="needle" type="TextureRect" parent="." unique_id=1064769786]
+layout_mode = 0
+offset_right = 283.0
+offset_bottom = 283.0
+pivot_offset = Vector2(140, 140)
+texture = ExtResource("3_2246s")
+
 [node name="speed" type="Label" parent="." unique_id=2015579651]
-layout_mode = 2
+layout_mode = 0
+offset_top = 130.0
+offset_right = 283.0
+offset_bottom = 153.0
