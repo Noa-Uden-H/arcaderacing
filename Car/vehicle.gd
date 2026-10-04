@@ -1,8 +1,8 @@
 extends VehicleBody3D
 
-const STEER_SPEED: float = 1.0
-const STEER_LIMIT: float = 0.2
-const BRAKE_STRENGTH: float = 300
+const STEER_SPEED: float = 0.8
+const STEER_LIMIT: float = 0.25
+const BRAKE_STRENGTH: float = 350
 
 @onready var driven_wheels = [$RR,$LR]
 @onready var steering_wheels = [$FR,$FL]
@@ -12,7 +12,7 @@ var current_cam = 0
 var cam_transition_speed: float = 2.5
 
 var steer_target: float = 0.0
-var ENGINE_POWER: float = 20000.0
+var ENGINE_POWER: float = 25000.0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
