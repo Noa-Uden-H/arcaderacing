@@ -66,6 +66,11 @@ func change_cam(delta) -> void:
 
 
 func is_moving_forwards() -> bool:
+	var forward_speed = get_forward_speed()
+	return forward_speed > 0.5
+
+
+func get_forward_speed() -> float:
 	var forward_vec = global_transform.basis.z #Forward vector is +z
 	var forward_speed = linear_velocity.dot(forward_vec) #How much velocity is in forward direction?
-	return forward_speed > 0.5
+	return forward_speed

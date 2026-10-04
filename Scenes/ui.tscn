@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://dsxfvc2ifd1ty"]
+
+[ext_resource type="Script" uid="uid://ctvt23a38ve81" path="res://Scripts/ui.gd" id="1_jxero"]
+
+[node name="UI" type="MarginContainer" unique_id=198344620]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1.0
+offset_top = -23.0
+grow_horizontal = 0
+grow_vertical = 0
+script = ExtResource("1_jxero")
+
+[node name="speed" type="Label" parent="." unique_id=2015579651]
+layout_mode = 2
