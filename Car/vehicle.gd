@@ -24,6 +24,12 @@ func _ready() -> void:
 	$Camera.transform = cams[current_cam].transform
 
 
+func _unhandled_input(event: InputEvent) -> void:
+	if event.is_action_pressed("camera"):
+		current_cam = (current_cam + 1) % len(cams)
+	if event.is_action_pressed("reset"):
+		reset_vehicle()
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
 	#Forward and backward acceleration
@@ -51,8 +57,6 @@ func _physics_process(delta: float) -> void:
 	steering = move_toward(steering, steer_target*STEER_LIMIT, STEER_SPEED * delta)
 	
 	#Camera
-	if Input.is_action_just_pressed("camera"):
-		current_cam = (current_cam + 1) % len(cams)
 	change_cam(delta)
 	
 	#Debug if below platform
@@ -63,6 +67,14 @@ func _physics_process(delta: float) -> void:
 func change_cam(delta) -> void:
 	var weight = 1 - exp(-cam_transition_speed * delta)
 	$Camera.transform = $Camera.transform.interpolate_with(cams[current_cam].transform, weight)
+
+
+func reset_vehicle() -> void:
+	linear_velocity = Vector3.ZERO
+	angular_velocity = Vector3.ZERO
+	
+	rotation.z = 0
+	global_position.y += 2
 
 
 func is_moving_forwards() -> bool:
