@@ -3,7 +3,7 @@ extends MarginContainer
 @onready var vehicle = get_parent()
 
 @onready var speed = $speed
-var speedometer_text = " m/s"
+var speedometer_text = " kmh"
 
 
 func _ready() -> void:
@@ -16,5 +16,5 @@ func _process(delta: float) -> void:
 
 
 func set_speedometer(speed_value: float) -> void:
-	speed.text = str(snapped(speed_value, 0.001)) + speedometer_text
+	speed.text = str(snapped(speed_value * 3.6, 0.01)) + speedometer_text
 	speed.show()
