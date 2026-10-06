@@ -5,7 +5,7 @@ var lap_started = false
 
 
 func _ready() -> void:
-	pass # Replace with function body.
+	print(ResourceLoader.get_dependencies("res://Assets/track1.res"))
 
 
 func _process(delta: float) -> void:
