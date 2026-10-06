@@ -4,39 +4,23 @@ extends Control
 @onready var needle = $Speedometer/needle
 @onready var laptimer = $Times/VBoxContainer/Laptime
 
-var laptime = 0
-var lap_started = false
-
 var target_needle_angle = 0.0
 
 
 func _ready() -> void:
 	needle.rotation = 0
-	start_lap()
+	Laptimer.start_lap()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	var speed_kmh = vehicle.get_forward_speed() * 3.6
-	target_needle_angle = deg_to_rad(abs(speed_kmh) * 360/400)
+	target_needle_angle = deg_to_rad(abs(speed_kmh) * 0.9) #360 deg/400 kmh
 	needle.rotation = lerp_angle(needle.rotation,target_needle_angle,20*delta)
 	
-	#Laptime
-	if lap_started:
-		laptime += delta
-		laptimer.text = timefloat_to_timestring(laptime)
-		laptimer.show()
-	
-	
-func start_lap() -> void:
-	laptime = 0
-	lap_started = true
-	
-
-func save_laptime(laptime) -> void:
-	var save_file = FileAccess.open("user://laptimes.save", FileAccess.WRITE)
-	var time_data_json = JSON.stringify(laptime)
-	save_file.store_line(time_data_json)
+	#Laptime	
+	laptimer.text = timefloat_to_timestring(Laptimer.laptime)
+	laptimer.show()
 	
 	
 func timefloat_to_timestring(time: float) -> String:
