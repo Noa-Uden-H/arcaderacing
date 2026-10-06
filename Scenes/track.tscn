@@ -46,7 +46,7 @@ transform = Transform3D(-0.29582375, 0, 0.9552425, 0, 1, 0, -0.9552425, 0, -0.29
 transform = Transform3D(-0.35367814, 0, -0.9353672, 0, 1, 0, 0.9353672, 0, -0.35367814, 425.344, 0.28136086, 127.64383)
 
 [node name="10" parent="Checkpoints" unique_id=1326148034 instance=ExtResource("3_xoefw")]
-transform = Transform3D(0.064532295, 0, -0.99791557, 0, 1, 0, 0.99791557, 0, 0.064532295, 425.20587, 2.3634143, 36.341156)
+transform = Transform3D(-0.064532265, 0, 0.99791557, 0, 1, 0, -0.99791557, 0, -0.064532265, 425.20587, 2.3634143, 36.341156)
 
 [node name="11" parent="Checkpoints" unique_id=828120160 instance=ExtResource("3_xoefw")]
 transform = Transform3D(0.57521534, 0, -0.818002, 0, 1, 0, 0.818002, 0, 0.57521534, 518.4198, 8.386452, -164.55988)
