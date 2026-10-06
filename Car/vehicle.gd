@@ -73,6 +73,7 @@ func reset_vehicle() -> void:
 	linear_velocity = Vector3.ZERO
 	angular_velocity = Vector3.ZERO
 	
+	rotation.x = 0
 	rotation.z = 0
 	global_position.y += 2
 
