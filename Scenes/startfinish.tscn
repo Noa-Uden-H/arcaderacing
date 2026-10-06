@@ -17,13 +17,14 @@ radius = 0.3
 height = 7.0
 radius = 0.3
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_t6bar"]
-size = Vector2(14, 1.5)
+[sub_resource type="BoxMesh" id="BoxMesh_bcua6"]
+size = Vector3(14, 0.5, 1.5)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_0ubtf"]
 size = Vector3(14, 8, 0.6)
 
 [node name="Startfinish" type="StaticBody3D" unique_id=682396352]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
 
 [node name="Pole1" type="MeshInstance3D" parent="." unique_id=191499900]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 4, 0)
@@ -44,7 +45,7 @@ shape = SubResource("CylinderShape3D_mp1ad")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=973304351]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 7, 0)
 material_override = ExtResource("2_hevow")
-mesh = SubResource("PlaneMesh_t6bar")
+mesh = SubResource("BoxMesh_bcua6")
 
 [node name="Area3D" type="Area3D" parent="." unique_id=1288798391]
 
