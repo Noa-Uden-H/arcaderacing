@@ -1,7 +1,7 @@
 extends Control
 
 @onready var vehicle = get_parent()
-@onready var needle = $needle
+@onready var needle = $speedometer/needle
 
 var target_needle_angle = 0.0
 
