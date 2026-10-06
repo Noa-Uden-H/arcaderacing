@@ -1,8 +1,8 @@
 extends VehicleBody3D
 
-const STEER_SPEED: float = 1.0
-const STEER_LIMIT: float = 0.2
-const BRAKE_STRENGTH: float = 300
+const STEER_SPEED: float = 0.8
+const STEER_LIMIT: float = 0.25
+const BRAKE_STRENGTH: float = 350
 
 @onready var driven_wheels = [$RR,$LR]
 @onready var steering_wheels = [$FR,$FL]
@@ -12,7 +12,7 @@ var current_cam = 0
 var cam_transition_speed: float = 2.5
 
 var steer_target: float = 0.0
-var ENGINE_POWER: float = 20000.0
+var ENGINE_POWER: float = 25000.0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -23,6 +23,12 @@ func _ready() -> void:
 		wheel.use_as_traction = true
 	$Camera.transform = cams[current_cam].transform
 
+
+func _unhandled_input(event: InputEvent) -> void:
+	if event.is_action_pressed("camera"):
+		current_cam = (current_cam + 1) % len(cams)
+	if event.is_action_pressed("reset"):
+		reset_vehicle()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
@@ -51,8 +57,6 @@ func _physics_process(delta: float) -> void:
 	steering = move_toward(steering, steer_target*STEER_LIMIT, STEER_SPEED * delta)
 	
 	#Camera
-	if Input.is_action_just_pressed("camera"):
-		current_cam = (current_cam + 1) % len(cams)
 	change_cam(delta)
 	
 	#Debug if below platform
@@ -65,7 +69,21 @@ func change_cam(delta) -> void:
 	$Camera.transform = $Camera.transform.interpolate_with(cams[current_cam].transform, weight)
 
 
+func reset_vehicle() -> void:
+	linear_velocity = Vector3.ZERO
+	angular_velocity = Vector3.ZERO
+	
+	rotation.x = 0
+	rotation.z = 0
+	global_position.y += 2
+
+
 func is_moving_forwards() -> bool:
+	var forward_speed = get_forward_speed()
+	return forward_speed > 0.5
+
+
+func get_forward_speed() -> float:
 	var forward_vec = global_transform.basis.z #Forward vector is +z
 	var forward_speed = linear_velocity.dot(forward_vec) #How much velocity is in forward direction?
-	return forward_speed > 0.5
+	return forward_speed
