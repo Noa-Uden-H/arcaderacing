@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://cfqyv4d5s5cj1"]
 
 [ext_resource type="Material" uid="uid://b21f8jhnrhnt2" path="res://Assets/checkpointpole.tres" id="1_2cwi7"]
+[ext_resource type="Script" uid="uid://bj3nlppj2k7sh" path="res://Scripts/checkpoint.gd" id="1_e75gc"]
+[ext_resource type="Material" uid="uid://bh8cn6j5p01ck" path="res://Assets/checkpoint.tres" id="3_e75gc"]
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_0ubtf"]
 material = ExtResource("1_2cwi7")
@@ -16,11 +18,15 @@ radius = 0.3
 height = 7.0
 radius = 0.3
 
+[sub_resource type="BoxMesh" id="BoxMesh_2cwi7"]
+size = Vector3(14, 0.5, 1.5)
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_0ubtf"]
 size = Vector3(14, 8, 0.6)
 
 [node name="Checkpoint" type="StaticBody3D" unique_id=682396352]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+script = ExtResource("1_e75gc")
 
 [node name="Pole1" type="MeshInstance3D" parent="." unique_id=191499900]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 4, 0)
@@ -37,6 +43,16 @@ mesh = SubResource("CylinderMesh_0ubtf")
 [node name="Pole2Collision" type="CollisionShape3D" parent="." unique_id=2055161286]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 3.5, 0)
 shape = SubResource("CylinderShape3D_mp1ad")
+
+[node name="Banner" type="MeshInstance3D" parent="." unique_id=368830422]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 7, 0)
+material_override = ExtResource("3_e75gc")
+mesh = SubResource("BoxMesh_2cwi7")
+
+[node name="Label3D" type="Label3D" parent="." unique_id=334648828]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 7, -0.251)
+outline_modulate = Color(0, 0, 0, 0)
+font_size = 256
 
 [node name="Area3D" type="Area3D" parent="." unique_id=1288798391]
 
