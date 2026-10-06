@@ -24,15 +24,24 @@ func _process(delta: float) -> void:
 	#Laptime
 	if lap_started:
 		laptime += delta
-		var minutes = floor(laptime / 60)
-		var seconds = int(fmod(laptime,60))
-		var mseconds = int(fmod(laptime, 1) * 100)
-		var timer = "%02d:%02d:%02d" % [minutes, seconds, mseconds]
-	
-		laptimer.text = timer
+		laptimer.text = timefloat_to_timestring(laptime)
 		laptimer.show()
+	
 	
 func start_lap() -> void:
 	laptime = 0
 	lap_started = true
 	
+
+func save_laptime(laptime) -> void:
+	var save_file = FileAccess.open("user://laptimes.save", FileAccess.WRITE)
+	var time_data_json = JSON.stringify(laptime)
+	save_file.store_line(time_data_json)
+	
+	
+func timefloat_to_timestring(time: float) -> String:
+	var minutes = floor(time/ 60)
+	var seconds = int(fmod(time,60))
+	var mseconds = int(fmod(time, 1) * 100)
+	var timer = "%02d:%02d:%02d" % [minutes, seconds, mseconds]
+	return timer
