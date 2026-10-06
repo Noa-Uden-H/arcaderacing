@@ -9,7 +9,6 @@ var target_needle_angle = 0.0
 
 func _ready() -> void:
 	needle.rotation = 0
-	Laptimer.start_lap()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
