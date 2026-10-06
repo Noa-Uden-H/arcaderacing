@@ -16,10 +16,10 @@ theme_override_constants/margin_right = 50
 theme_override_constants/margin_bottom = 50
 script = ExtResource("1_jxero")
 
-[node name="speedometer" type="Control" parent="." unique_id=1339772991]
+[node name="Speedometer" type="Control" parent="." unique_id=1339772991]
 layout_mode = 2
 
-[node name="speedometer" type="TextureRect" parent="speedometer" unique_id=1016372297]
+[node name="dial" type="TextureRect" parent="Speedometer" unique_id=1016372297]
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
@@ -32,7 +32,7 @@ grow_horizontal = 0
 grow_vertical = 0
 texture = ExtResource("2_nf4gj")
 
-[node name="needle" type="TextureRect" parent="speedometer" unique_id=1064769786]
+[node name="needle" type="TextureRect" parent="Speedometer" unique_id=1064769786]
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
@@ -46,8 +46,19 @@ grow_vertical = 0
 pivot_offset = Vector2(140, 140)
 texture = ExtResource("3_2246s")
 
-[node name="speed" type="Label" parent="speedometer" unique_id=2015579651]
+[node name="speed" type="Label" parent="Speedometer" unique_id=2015579651]
 layout_mode = 0
 offset_top = 130.0
 offset_right = 283.0
 offset_bottom = 153.0
+
+[node name="Times" type="Control" parent="." unique_id=1930360339]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Times" unique_id=54573568]
+layout_mode = 1
+offset_right = 1820.0
+offset_bottom = 980.0
+
+[node name="Laptime" type="Label" parent="Times/VBoxContainer" unique_id=1276485265]
+layout_mode = 2
