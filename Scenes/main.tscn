@@ -8,4 +8,12 @@
 [node name="Testtrack" parent="." unique_id=608214609 instance=ExtResource("1_jjgbg")]
 
 [node name="VehicleBody3D" parent="." unique_id=1925260360 instance=ExtResource("2_bo1nx")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.567566, 0)
+transform = Transform3D(-0.0073767668, 0, -0.9999728, 0, 1, 0, 0.9999728, 0, -0.0073767668, 0, 4.079569, 0)
+
+[node name="Sun1" type="DirectionalLight3D" parent="." unique_id=363437435]
+transform = Transform3D(1, 0, 0, 0, 0.087155804, 0.9961947, 0, -0.9961947, 0.087155804, 0, 0, 0)
+light_bake_mode = 1
+
+[node name="Sun2" type="DirectionalLight3D" parent="." unique_id=1696537630]
+transform = Transform3D(1, 0, 0, 0, -0.08715577, 0.9961947, 0, -0.9961947, -0.08715577, 0, 0, 0)
+light_bake_mode = 1

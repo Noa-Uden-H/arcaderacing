@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://ciuu25qse3jsl" path="res://Car/vehicle.gd" id="1_0eymi"]
 [ext_resource type="ArrayMesh" uid="uid://c15hnne2a7hts" path="res://Car/bus.obj" id="1_o8jr2"]
+[ext_resource type="PackedScene" uid="uid://dsxfvc2ifd1ty" path="res://Scenes/ui.tscn" id="2_rjd7k"]
 [ext_resource type="ArrayMesh" uid="uid://dekonxhfla5d4" path="res://Car/wheel.obj" id="4_rjd7k"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_o8jr2"]
@@ -23,6 +24,8 @@ albedo_color = Color(0, 0, 0, 1)
 mass = 8000.0
 script = ExtResource("1_0eymi")
 metadata/_edit_group_ = true
+
+[node name="UI" parent="." unique_id=198344620 instance=ExtResource("2_rjd7k")]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1903615865]
 mesh = ExtResource("1_o8jr2")
