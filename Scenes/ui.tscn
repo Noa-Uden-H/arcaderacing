@@ -10,10 +10,10 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/margin_left = 50
-theme_override_constants/margin_top = 50
-theme_override_constants/margin_right = 50
-theme_override_constants/margin_bottom = 50
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 30
 script = ExtResource("1_jxero")
 
 [node name="Speedometer" type="Control" parent="." unique_id=1339772991]
@@ -62,3 +62,21 @@ offset_bottom = 980.0
 
 [node name="Laptime" type="Label" parent="Times/VBoxContainer" unique_id=1276485265]
 layout_mode = 2
+theme_override_font_sizes/font_size = 32
+
+[node name="Checkpoints" type="Control" parent="." unique_id=1544493114]
+layout_mode = 2
+
+[node name="CheckpointCounter" type="Label" parent="Checkpoints" unique_id=2068019290]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -88.0
+offset_right = 20.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 64

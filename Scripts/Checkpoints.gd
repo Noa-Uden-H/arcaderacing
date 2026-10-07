@@ -1,4 +1,5 @@
 extends Node
+signal checkpoint_activated
 
 
 @onready var checkpoints = $"/root/Main/track/Checkpoints".get_children()
@@ -13,8 +14,9 @@ func _ready() -> void:
 
 func check_checkpoint(checkpoint: StaticBody3D) -> bool:
 	if checkpoints[next_checkpoint] == checkpoint:
+		checkpoint_activated.emit()
 		increment_checkpoints()
-		print(next_checkpoint)
+		#print(next_checkpoint)
 		return true
 	return false
 

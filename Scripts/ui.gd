@@ -9,6 +9,8 @@ var target_needle_angle = 0.0
 
 func _ready() -> void:
 	needle.rotation = 0
+	Checkpoints.checkpoint_activated.connect(update_checkpoint_counter)
+	update_checkpoint_counter()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -28,3 +30,7 @@ func timefloat_to_timestring(time: float) -> String:
 	var mseconds = int(fmod(time, 1) * 100)
 	var timer = "%02d:%02d:%02d" % [minutes, seconds, mseconds]
 	return timer
+
+
+func update_checkpoint_counter() -> void:
+	$Checkpoints/CheckpointCounter.text = str(Checkpoints.next_checkpoint) + "/" + str(len(Checkpoints.checkpoints) - 1)
