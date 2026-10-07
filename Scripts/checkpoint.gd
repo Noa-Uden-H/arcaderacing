@@ -20,14 +20,15 @@ func _process(delta: float) -> void:
 
 
 func _on_body_entered(body: Node3D) -> void:
-	if finish and not startup:
-		activate_finish()
-	else:
+	if not startup:
 		activate_checkpoint()
+		
 
 
 func activate_checkpoint() -> void:
-	pass
+	Checkpoints.check_checkpoint(self)
+	if finish:
+		activate_finish()
 
 
 func activate_finish() -> void:
