@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 Laptimer="*uid://cwao5klxmqfl3"
 Checkpoints="*uid://8iywe3caivyt"
+Respawns="*uid://8o46roh5pq5u"
 
 [display]
 

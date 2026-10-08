@@ -28,7 +28,8 @@ func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("camera"):
 		current_cam = (current_cam + 1) % len(cams)
 	if event.is_action_pressed("reset"):
-		reset_vehicle()
+		#reset_vehicle()
+		pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
