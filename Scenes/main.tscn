@@ -2,6 +2,9 @@
 
 [ext_resource type="PackedScene" uid="uid://c47kbjwb152b7" path="res://Scenes/track.tscn" id="1_jjgbg"]
 [ext_resource type="PackedScene" uid="uid://c8wk0v3hw5dtm" path="res://Car/bus.tscn" id="2_bo1nx"]
+[ext_resource type="Script" uid="uid://3mxmi4njw28c" path="res://Scripts/deathplane.gd" id="3_8gbba"]
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_0ubtf"]
 
 [node name="Main" type="Node3D" unique_id=2045872867]
 
@@ -17,3 +20,12 @@ light_bake_mode = 1
 [node name="Sun2" type="DirectionalLight3D" parent="." unique_id=1696537630]
 transform = Transform3D(1, 0, 0, 0, -0.08715577, 0.9961947, 0, -0.9961947, -0.08715577, 0, 0, 0)
 light_bake_mode = 1
+
+[node name="Deathplane" type="Area3D" parent="." unique_id=1560167634]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, 0)
+script = ExtResource("3_8gbba")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Deathplane" unique_id=1082326513]
+shape = SubResource("WorldBoundaryShape3D_0ubtf")
+
+[connection signal="body_entered" from="Deathplane" to="Deathplane" method="_on_body_entered"]
