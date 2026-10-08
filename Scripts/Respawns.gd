@@ -22,8 +22,8 @@ func _unhandled_input(event: InputEvent) -> void:
 
 
 func respawn_vehicle(respawn_obj) -> void:
-	var pos = respawn_obj.global_position
-	var rot = respawn_obj.global_rotation.y
+	var pos = respawn_obj.global_position if respawn_obj == vehicle_ref else respawn_obj.get_node("spawn_marker").global_position
+	var rot = respawn_obj.global_rotation.y if respawn_obj == vehicle_ref else respawn_obj.get_node("spawn_marker").global_rotation.y	
 	var cam = vehicle_ref.current_cam
 	vehicle_ref.queue_free()
 	
@@ -33,7 +33,5 @@ func respawn_vehicle(respawn_obj) -> void:
 	new_vehicle.global_position = pos
 	new_vehicle.global_rotation.y = rot
 	new_vehicle.current_cam = cam
-	if respawn_obj != vehicle_ref:
-		new_vehicle.global_position.y += 2.7
 	if respawn_obj == Checkpoints.finish:
 		new_vehicle.global_position.x += 20
