@@ -17,6 +17,8 @@ func _unhandled_input(event: InputEvent) -> void:
 		respawn_vehicle(vehicle_ref)
 	if event.is_action_pressed("respawn"):
 		respawn_vehicle(Checkpoints.current_checkpoint)
+	if event.is_action_pressed("restart"):
+		respawn_vehicle(Checkpoints.finish)
 
 
 func respawn_vehicle(respawn_obj) -> void:
@@ -33,3 +35,5 @@ func respawn_vehicle(respawn_obj) -> void:
 	new_vehicle.current_cam = cam
 	if respawn_obj != vehicle_ref:
 		new_vehicle.global_position.y += 2.7
+	if respawn_obj == Checkpoints.finish:
+		new_vehicle.global_position.x += 20
