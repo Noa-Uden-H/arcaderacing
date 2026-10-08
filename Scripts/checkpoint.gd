@@ -11,6 +11,7 @@ func _ready() -> void:
 	if finish:
 		label.text = ""
 		banner.material_override = finish_texture
+		$spawn_marker.global_position.x += 20 #offset spawn behind finish
 	else:
 		label.text = "Checkpoint " + self.name
 

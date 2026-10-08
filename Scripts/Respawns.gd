@@ -33,5 +33,3 @@ func respawn_vehicle(respawn_obj) -> void:
 	new_vehicle.global_position = pos
 	new_vehicle.global_rotation.y = rot
 	new_vehicle.current_cam = cam
-	if respawn_obj == Checkpoints.finish:
-		new_vehicle.global_position.x += 20
