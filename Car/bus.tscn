@@ -54,8 +54,8 @@ wheel_rest_length = 0.3
 wheel_friction_slip = 5.0
 suspension_stiffness = 20000.0
 suspension_max_force = 40000.0
-damping_compression = 400.0
-damping_relaxation = 550.0
+damping_compression = 600.0
+damping_relaxation = 750.0
 metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="FR" unique_id=1894411582]
@@ -69,8 +69,8 @@ wheel_rest_length = 0.3
 wheel_friction_slip = 5.0
 suspension_stiffness = 20000.0
 suspension_max_force = 40000.0
-damping_compression = 400.0
-damping_relaxation = 550.0
+damping_compression = 600.0
+damping_relaxation = 750.0
 metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="FL" unique_id=535377638]
@@ -84,8 +84,8 @@ wheel_rest_length = 0.3
 wheel_friction_slip = 5.0
 suspension_stiffness = 20000.0
 suspension_max_force = 40000.0
-damping_compression = 400.0
-damping_relaxation = 550.0
+damping_compression = 600.0
+damping_relaxation = 750.0
 metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="RR" unique_id=2145175985]
@@ -99,8 +99,8 @@ wheel_rest_length = 0.3
 wheel_friction_slip = 5.0
 suspension_stiffness = 20000.0
 suspension_max_force = 40000.0
-damping_compression = 400.0
-damping_relaxation = 550.0
+damping_compression = 600.0
+damping_relaxation = 750.0
 metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="LR" unique_id=2113247357]
