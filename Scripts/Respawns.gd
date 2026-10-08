@@ -19,6 +19,9 @@ func _unhandled_input(event: InputEvent) -> void:
 		respawn_vehicle(Checkpoints.current_checkpoint)
 	if event.is_action_pressed("restart"):
 		respawn_vehicle(Checkpoints.finish)
+		Checkpoints.reset_checkpoints()
+		Laptimer.laptime = 0
+		Laptimer.lap_started = false
 
 
 func respawn_vehicle(respawn_obj) -> void:
