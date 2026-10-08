@@ -4,7 +4,7 @@ signal checkpoint_activated
 
 @onready var checkpoints = $"/root/Main/track/Checkpoints".get_children()
 @onready var finish = checkpoints[0]
-var current_checkpoint = finish
+@onready var current_checkpoint = finish
 var next_checkpoint = 0
 
 
