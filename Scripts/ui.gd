@@ -33,4 +33,4 @@ func timefloat_to_timestring(time: float) -> String:
 
 
 func update_checkpoint_counter() -> void:
-	$Checkpoints/CheckpointCounter.text = str(Checkpoints.next_checkpoint) + "/" + str(len(Checkpoints.checkpoints) - 1)
+	$Checkpoints/CheckpointCounter.text = str(Checkpoints.current_checkpoint_index) + "/" + str(len(Checkpoints.checkpoints) - 1)
