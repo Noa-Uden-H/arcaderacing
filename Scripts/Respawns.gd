@@ -3,20 +3,14 @@ extends Node
 @onready var vehicle_ref = $"/root/Main/VehicleBody3D"
 
 
-func _ready() -> void:
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-
-
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("reset") and (vehicle_ref.linear_velocity.length_squared() <= 0.05):
 		respawn_vehicle(vehicle_ref)
 	if event.is_action_pressed("respawn"):
 		respawn_vehicle(Checkpoints.current_checkpoint)
+		if Checkpoints.current_checkpoint.finish:
+			Laptimer.laptime = 0
+			Laptimer.lap_started = false
 	if event.is_action_pressed("restart"):
 		respawn_vehicle(Checkpoints.finish)
 		Checkpoints.reset_checkpoints()
