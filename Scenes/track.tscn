@@ -14,8 +14,8 @@ shape = ExtResource("2_xfo4p")
 
 [node name="Checkpoints" type="Node" parent="." unique_id=1646888754]
 
-[node name="startfinish" parent="Checkpoints" unique_id=1448066956 instance=ExtResource("3_xoefw")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0.80828667, -0.3)
+[node name="startfinish" parent="Checkpoints" unique_id=682396352 instance=ExtResource("3_xoefw")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0.8101458, 0)
 finish = true
 
 [node name="1" parent="Checkpoints" unique_id=1337207608 instance=ExtResource("3_xoefw")]
