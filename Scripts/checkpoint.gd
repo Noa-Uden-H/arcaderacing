@@ -33,8 +33,8 @@ func activate_checkpoint() -> void:
 
 
 func activate_finish() -> void:
-	print("activate finish")
 	Laptimer.start_lap()
+	Checkpoints.relay_finish_signal()
 
 
 func _on_startup_timeout() -> void:

@@ -2,6 +2,7 @@ extends Node
 
 var laptime = 0
 var lap_started = false
+var previous_laps = []
 
 
 func _ready() -> void:
@@ -14,6 +15,8 @@ func _process(delta: float) -> void:
 	
 
 func start_lap() -> void:
+	if laptime != 0:
+		previous_laps.append(laptime)
 	laptime = 0
 	lap_started = true
 	

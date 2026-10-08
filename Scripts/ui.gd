@@ -10,7 +10,9 @@ var target_needle_angle = 0.0
 func _ready() -> void:
 	needle.rotation = 0
 	Checkpoints.checkpoint_activated.connect(update_checkpoint_counter)
+	Checkpoints.finish_lap_relay.connect(display_laps)
 	update_checkpoint_counter()
+	display_laps()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -34,3 +36,11 @@ func timefloat_to_timestring(time: float) -> String:
 
 func update_checkpoint_counter() -> void:
 	$Checkpoints/CheckpointCounter.text = str(Checkpoints.current_checkpoint_index) + "/" + str(len(Checkpoints.checkpoints) - 1)
+
+
+func display_laps() -> void:
+	var laptimes_label = $Times/VBoxContainer/Laptimes
+	laptimes_label.text = "Previous laps:\n"
+	for lap in Laptimer.previous_laps:
+		laptimes_label.text += timefloat_to_timestring(lap) + '\n'
+	laptimes_label.show()

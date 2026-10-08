@@ -1,6 +1,6 @@
 extends Node
 signal checkpoint_activated
-
+signal finish_lap_relay
 
 @onready var checkpoints = $"/root/Main/track/Checkpoints".get_children()
 @onready var finish = checkpoints[0]
@@ -32,3 +32,7 @@ func reset_checkpoints() -> void:
 	current_checkpoint_index = 0
 	next_checkpoint = 0
 	checkpoint_activated.emit()
+
+
+func relay_finish_signal() -> void:
+	finish_lap_relay.emit()
