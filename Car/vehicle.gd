@@ -63,10 +63,6 @@ func _physics_process(delta: float) -> void:
 	#Camera
 	change_cam(delta)
 	
-	#Debug if below platform
-	if global_position.y < -1:
-		print("off")
-	
 	
 func change_cam(delta) -> void:
 	var weight = 1 - exp(-cam_transition_speed * delta)
@@ -95,9 +91,8 @@ func get_forward_speed() -> float:
 
 func reverse_cam() -> void:
 	if get_forward_speed() < -1:
-		moving_backwards = false
+		moving_backwards = true
 		current_cam = len(cams) - 1
-		return
 	if get_forward_speed() > 2:
 		current_cam = cam_before_reverse
-		moving_backwards = true
+		moving_backwards = false
