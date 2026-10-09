@@ -9,10 +9,6 @@ var current_checkpoint_index = 0
 var next_checkpoint = 0
 
 
-func _ready() -> void:
-	pass
-
-
 func check_checkpoint(checkpoint: StaticBody3D) -> bool:
 	if checkpoints[next_checkpoint] == checkpoint:
 		increment_checkpoints()

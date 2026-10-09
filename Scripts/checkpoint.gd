@@ -16,14 +16,9 @@ func _ready() -> void:
 		label.text = "Checkpoint " + self.name
 
 
-func _process(delta: float) -> void:
-	pass
-
-
 func _on_body_entered(body: Node3D) -> void:
 	if not startup:
 		activate_checkpoint()
-		
 
 
 func activate_checkpoint() -> void:

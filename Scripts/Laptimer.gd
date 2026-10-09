@@ -5,10 +5,6 @@ var lap_started = false
 var previous_laps = []
 
 
-func _ready() -> void:
-	pass
-
-
 func _process(delta: float) -> void:
 	if lap_started:
 		laptime += delta
