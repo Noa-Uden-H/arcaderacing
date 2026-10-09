@@ -25,3 +25,8 @@ func save_laptime(previous_laptime) -> void:
 	var save_file = FileAccess.open("user://laptimes.save", FileAccess.WRITE)
 	var time_data_json = JSON.stringify(previous_laptime)
 	save_file.store_line(time_data_json)
+
+
+func reset_timer() -> void:
+	laptime = 0
+	lap_started = false
