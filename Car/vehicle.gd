@@ -7,9 +7,11 @@ const BRAKE_STRENGTH: float = 350
 @onready var driven_wheels = [$RR,$LR]
 @onready var steering_wheels = [$FR,$FL]
 
-@onready var cams = [$cockpit,$closechase,$farchase,$TESTCAM]
+@onready var cams = [$cockpit,$closechase,$farchase,$reversecam]
 var current_cam = 0
+var cam_before_reverse = 0
 var cam_transition_speed: float = 2.5
+var moving_backwards
 
 var steer_target: float = 0.0
 var ENGINE_POWER: float = 25000.0
@@ -25,11 +27,9 @@ func _ready() -> void:
 
 
 func _unhandled_input(event: InputEvent) -> void:
-	if event.is_action_pressed("camera"):
-		current_cam = (current_cam + 1) % len(cams)
-	if event.is_action_pressed("reset"):
-		#reset_vehicle()
-		pass
+	if event.is_action_pressed("camera") and not moving_backwards:
+		current_cam = (current_cam + 1) % (len(cams) - 1)
+		cam_before_reverse = current_cam
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
@@ -56,6 +56,9 @@ func _physics_process(delta: float) -> void:
 		steer_target = 0
 	
 	steering = move_toward(steering, steer_target*STEER_LIMIT, STEER_SPEED * delta)
+	
+	#Reversecam
+	reverse_cam()
 	
 	#Camera
 	change_cam(delta)
@@ -88,3 +91,13 @@ func get_forward_speed() -> float:
 	var forward_vec = global_transform.basis.z #Forward vector is +z
 	var forward_speed = linear_velocity.dot(forward_vec) #How much velocity is in forward direction?
 	return forward_speed
+
+
+func reverse_cam() -> void:
+	if get_forward_speed() < -1:
+		moving_backwards = false
+		current_cam = len(cams) - 1
+		return
+	if get_forward_speed() > 2:
+		current_cam = cam_before_reverse
+		moving_backwards = true

@@ -117,5 +117,5 @@ transform = Transform3D(-1, -1.5180806e-08, 8.609462e-08, 0, 0.9848077, 0.173648
 [node name="farchase" type="Marker3D" parent="." unique_id=2053075913]
 transform = Transform3D(-1, 3.694646e-08, -7.923193e-08, 0, 0.9063077, 0.42261824, 8.742278e-08, 0.42261824, -0.9063077, 0, 10, -20)
 
-[node name="TESTCAM" type="Marker3D" parent="." unique_id=630248962]
-transform = Transform3D(-0.837604, -0.23086701, 0.4950959, 3.5527137e-15, 0.90630764, 0.4226182, -0.5462779, 0.3539867, -0.7591269, 8.169064, 2.2416706, -3.5118437)
+[node name="reversecam" type="Marker3D" parent="." unique_id=630248962]
+transform = Transform3D(1, 0, 0, 0, 0.9659257, 0.258819, 0, -0.258819, 0.9659257, 0, 7.5, 15)
