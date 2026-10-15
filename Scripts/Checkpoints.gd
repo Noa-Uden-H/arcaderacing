@@ -27,7 +27,6 @@ func reset_checkpoints() -> void:
 	current_checkpoint = finish
 	current_checkpoint_index = 0
 	next_checkpoint = 0
-	checkpoint_activated.emit()
 
 
 func relay_finish_signal() -> void:

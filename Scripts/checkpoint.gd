@@ -22,13 +22,13 @@ func _on_body_entered(body: Node3D) -> void:
 
 
 func activate_checkpoint() -> void:
-	Checkpoints.check_checkpoint(self)
+	var is_correct_checkpoint = Checkpoints.check_checkpoint(self)
 	if finish:
-		activate_finish()
+		activate_finish(is_correct_checkpoint)
 
 
-func activate_finish() -> void:
-	Laptimer.start_lap()
+func activate_finish(correct_checkpoint: bool) -> void:
+	Laptimer.start_lap(correct_checkpoint)
 	Checkpoints.relay_finish_signal()
 
 

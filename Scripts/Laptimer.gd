@@ -10,8 +10,8 @@ func _process(delta: float) -> void:
 		laptime += delta
 	
 
-func start_lap() -> void:
-	if laptime != 0:
+func start_lap(correct_checkpoint: bool) -> void:
+	if laptime != 0 and correct_checkpoint:
 		previous_laps.append(laptime)
 	laptime = 0
 	lap_started = true
