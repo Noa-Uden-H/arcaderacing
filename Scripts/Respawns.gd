@@ -20,7 +20,7 @@ func respawn_vehicle(respawn_obj) -> void:
 	var pos = respawn_obj.global_position if respawn_obj == vehicle_ref else respawn_obj.get_node("spawn_marker").global_position
 	var rot = respawn_obj.global_rotation.y if respawn_obj == vehicle_ref else respawn_obj.get_node("spawn_marker").global_rotation.y	
 	var cam = vehicle_ref.current_cam
-	var offset = 1.5 if respawn_obj == vehicle_ref else 0
+	var offset = 1.5 if respawn_obj == vehicle_ref else 0.0
 	vehicle_ref.queue_free()
 	
 	var new_vehicle = vehicle_scene.instantiate()
